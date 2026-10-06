@@ -23,7 +23,7 @@ jobs:
       - name: Analyze with SonarQube Cloud
         uses: SonarSource/sonarcloud-github-action@v3
         with:
-          args: -Dsonar.organization=rayankleboss -Dsonar.projectKey=rayankleboss_sonarqube_test -Dsonar.projectName=sonarqube_test -Dsonar.sources=.
+          args: -Dsonar.organization=rayankleboss -Dsonar.projectKey=rayankleboss_sonarqube_test -Dsonar.projectName=sonarqube_test -Dsonar.sources=. -Dsonar.branch.name=master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
