@@ -1,7 +1,7 @@
 import hashlib
 import pytest
 
-from src.bad import process, duplicate_one, duplicate_two
+from src.test3 import process, duplicate_one, duplicate_two
 
 
 def test_process_returns_md5_hash(tmp_path, monkeypatch):
