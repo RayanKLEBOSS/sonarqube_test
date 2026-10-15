@@ -2,12 +2,13 @@ name: SonarQube Cloud Analysis
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
+  contents: read
   pull-requests: read
 
 jobs:
@@ -23,7 +24,10 @@ jobs:
       - name: Analyze with SonarQube Cloud
         uses: SonarSource/sonarcloud-github-action@v3
         with:
-          args: -Dsonar.organization=rayankleboss -Dsonar.projectKey=rayankleboss_sonarqube_test -Dsonar.projectName=sonarqube_test -Dsonar.sources=. -Dsonar.branch.name=master
+          args: >
+            -Dsonar.organization=rayankleboss
+            -Dsonar.projectKey=RayanKLEBOSS_sonarqube_test
+            -Dsonar.sources=src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
